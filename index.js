@@ -29,9 +29,16 @@ client.once(Events.ClientReady, c => {
 });
 client.login(TOKEN);
 
-client.on(Events.InteractionCreate, interaction => {
+client.on(Events.InteractionCreate, async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 	const command = interaction.client.commands.get(interaction.commandName);
 	if (!command) console.error('[ERROR] Command is not a valid command.');
-	command.execute(interaction);
+
+	try {
+		await command.execute(interaction);
+	}
+	catch (error) {
+		console.error(`[ERROR]: ${error}`);
+		await interaction.reply('❌ There was an error trying to execute this command! ❌');
+	}
 });
