@@ -2,7 +2,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 const exampleEmbed = new EmbedBuilder()
 	.setColor('DarkOrange')
-	.setTitle('Git Commads')
+	.setTitle('Git Commands')
 	// .setAuthor({ name: 'Git Commads', iconURL: 'https://i.imgur.com/ZjtyCv2.png', url: 'https://discord.js.org' })
 	.setDescription('Git commands are a series of instructions used to perform specific operations within the Git environment.')
 	.setThumbnail('https://cdn-icons-png.flaticon.com/512/4494/4494748.png')
@@ -26,7 +26,7 @@ const exampleEmbed = new EmbedBuilder()
 	);
 
 module.exports = {
-	data: new SlashCommandBuilder().setName('gitcommads').setDescription('Remember and descriptions commands git!'),
+	data: new SlashCommandBuilder().setName('gitcommands').setDescription('Remember and descriptions commands git!'),
 
 	async execute(interaction) {
 		await interaction.reply({ embeds: [exampleEmbed] });
