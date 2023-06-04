@@ -1,7 +1,10 @@
 {
   "dependencies": {
     "discord.js": "^14.11.0",
-    "dotenv": "^16.1.3"
+    "dotenv": "^16.1.3",
+    "node-cron": "^3.0.2",
+    "node-fetch": "^3.3.1",
+    "openai": "^3.2.1"
   },
   "name": "alice-bot",
   "version": "1.0.0",
