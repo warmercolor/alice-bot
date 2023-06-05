@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder().setName('resources').setDescription('Get learning resources').addStringOption(option => option.setName('topic').setDescription('The topic to get resources for').setRequired(true)),
@@ -31,7 +31,7 @@ module.exports = {
 		};
 
 		if (resources[topic]) {
-			const embed = new MessageEmbed()
+			const embed = new EmbedBuilder()
 				.setTitle(`Resources for learning ${topic}`)
 				.setColor(resources[topic].color)
 				.setURL(resources[topic].link)
